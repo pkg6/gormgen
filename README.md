@@ -1,20 +1,20 @@
-# GenTool
+# gormgen
 
 Install GEN as a binary tool
 
 ## install
 
 ```shell
- go install gorm.io/gen/tools/gentool@latest
+go install github.com/pkg6/gormgen@latest
 ```
 
 ## usage
 
 ```shell
  
- gentool -h  
+ gormgen -h  
  
- Usage of gentool:
+ Usage of gormgen:
   -db string
         input mysql|postgres|sqlite|sqlserver|clickhouse. consult[https://gorm.io/docs/connecting_to_the_database.html] (default "mysql")
   -dsn string
@@ -125,5 +125,5 @@ detect integer field's unsigned type, adjust generated data type
 ### example
 
 ```shell
-gentool -dsn "user:pwd@tcp(127.0.0.1:3306)/database?charset=utf8mb4&parseTime=True&loc=Local" -tables "orders,doctor"
+gormgen -dsn "user:pwd@tcp(127.0.0.1:3306)/database?charset=utf8mb4&parseTime=True&loc=Local" -tables "orders,doctor"
 ```
