@@ -1,0 +1,24 @@
+name: build golangs
+
+on:
+  release:
+    types: [created]
+
+permissions:
+    contents: write
+    packages: write
+
+jobs:
+  release-linux-amd64:
+    name: release linux/amd64
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: pkg6/gruploader-action@main
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        action: golangs
+        bin_name: gormgen
+        extra_files: 
+          README.md
+          LICENSE
